@@ -20,4 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
         layout.addView(gameView, 0);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gameView.pause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gameView.resume(this);
+    }
 }
